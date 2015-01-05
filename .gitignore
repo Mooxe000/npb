@@ -1,0 +1,17 @@
+.DS_Store
+.idea
+npm-debug.log
+*_book
+
+.tmp
+trash
+
+/node_modules
+/bower_components
+/dist
+/build
+/libs
+/**/bower_components
+/**/node_modules
+/**/dist
+/**/build
