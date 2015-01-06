@@ -1,4 +1,4 @@
-echo = console.log
+eyes = require 'eyes'
 _ = require 'lodash'
 {PWD} = process.env
 fs = require 'fs'

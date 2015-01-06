@@ -19,13 +19,17 @@ npm:
   bugs:
     url: 'https://github.com/Mooxe000/feb/issues'
   homepage: 'https://github.com/Mooxe000/feb'
+  scripts:
+    test: ''
   dependencies: [
     'coffee-script'
     'lodash'
     'shelljs'
     'jsonfile'
   ]
-  devDependencies: []
+  devDependencies: [
+    'eyes'
+  ]
 
 config:
   feb:

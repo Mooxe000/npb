@@ -1,4 +1,4 @@
-echo = console.log
+eyes = require 'eyes'
 _ = require 'lodash'
 
 module.exports = (conf_obj) ->
@@ -14,7 +14,6 @@ module.exports = (conf_obj) ->
     npm:
       dependencies: npm.dependencies
       devDependencies: npm.devDependencies
-
 
   deps = dependence.npm.dependencies
   if (

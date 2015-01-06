@@ -1,17 +1,8 @@
 echo = console.log
+eyes = require 'eyes'
 _ = require 'lodash'
 
 getSyncConf = (conf_obj) ->
-  isNull =
-    npm:
-      if _.isEmpty conf_obj.npm
-      then true
-      else false
-    bower:
-      if _.isEmpty conf_obj.bower
-      then true
-      else false
-
   result =
     config: do ->
       return {} if _.isEmpty conf_obj.npb.config
@@ -22,7 +13,7 @@ getSyncConf = (conf_obj) ->
       return {} if _.isEmpty conf_obj.npb
       _.omit conf_obj.npb, (value, key) ->
         key is 'bower' or
-          key is 'npm'
+        key is 'npm'
 
   funExceptDep = (value, key) ->
     key is 'dependencies' or
@@ -33,7 +24,7 @@ getSyncConf = (conf_obj) ->
     'npm'
   ]
     result[module] =
-      if isNull[module]
+      if _.isEmpty conf_obj[module]
       then {}
       else
         # load conf file
@@ -46,25 +37,27 @@ getSyncConf = (conf_obj) ->
           return {} if _.isEmpty conf_obj.npb[module]
           _.omit conf_obj.npb[module], funExceptDep
 
-    unless _.isEmpty result[module]
-      # merge public
-      unless _.isEmpty result.public
-        for key, value of result.public
-          result[module].config[key] = value
+  for module in [
+    'bower'
+    'npm'
+  ]
+    continue if _.isEmpty result[module]
 
-      # merge custom
-      unless _.isEmpty result.custom
-        for key, value of result.custom
-          result[module].config[key] = value
+    # merge public
+    unless _.isEmpty result.public
+      for key, value of result.public
+        result[module].config[key] = value
 
-      # set packages empty
-      result[module].config.dependencies = {}
-      result[module].config.devDependencies = {}
+    # merge custom
+    unless _.isEmpty result[module].custom
+      for key, value of result[module].custom
+        result[module].config[key] = value
 
-    result[module] =
-      if result[module].config
-      then result[module].config
-      else {}
+    result[module] = result[module].config
+
+    # set packages empty
+    result[module].dependencies = {}
+    result[module].devDependencies = {}
 
   delete result.public
 
