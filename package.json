@@ -1,19 +1,19 @@
 {
   "name": "npba",
-  "version": "0.0.3",
-  "description": "Anauxiliarytooltohelpdeveloperbuildnodeprojectmoreconvenient.",
-  "main": "index.js",
+  "version": "0.0.4",
+  "description": "An auxiliary tool to help developer build node project more convenient.",
+  "main": "index.coffee",
   "bin": {
     "npb": "bin/npb.coffee"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Mooxe000/feb.git"
   },
-  "author": ":FooTearth<footearth@gmail.com>",
+  "author": ":FooTearth <footearth@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Mooxe000/feb/issues"
@@ -25,5 +25,7 @@
     "lodash": "^2.4.1",
     "shelljs": "^0.3.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eyes": "^0.1.8"
+  }
 }

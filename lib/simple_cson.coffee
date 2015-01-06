@@ -1,4 +1,4 @@
-echo = console.log
+eyes = require 'eyes'
 fs = require 'fs'
 coffee = require 'coffee-script'
 
@@ -16,7 +16,6 @@ parse = (cson_file_path) ->
       "\"#{match.replace /:/g, ''}\":"
     .replace /\'/g, '\"'
   json_str = rows.join ''
-  json_str = json_str.replace /\s+/g, ''
   json_str = "{#{json_str}}"
   json_obj = JSON.parse json_str
   json_obj
