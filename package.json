@@ -1,7 +1,7 @@
 {
-  "name": "feb",
+  "name": "npb",
   "version": "0.0.0-pre",
-  "description": "Front-endprojectpackagemanagerandbuildscriptinit",
+  "description": "Anauxiliarytooltohelpdeveloperbuildnodeprojectmoreconvenient.",
   "main": "index.js",
   "bin": {
     "feb": "feb.js"
