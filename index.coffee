@@ -1,5 +1,5 @@
 #!/usr/bin/env coffee
-echo = console.log
+eyes = require 'eyes'
 {PWD} = process.env
 _ = require 'lodash'
 
