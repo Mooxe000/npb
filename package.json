@@ -1,6 +1,6 @@
 {
   "name": "npba",
-  "version": "0.0.0-pre",
+  "version": "0.0.0",
   "description": "Anauxiliarytooltohelpdeveloperbuildnodeprojectmoreconvenient.",
   "main": "index.js",
   "bin": {
