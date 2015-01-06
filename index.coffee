@@ -31,7 +31,7 @@ target.clean = ->
 target.install = ->
   target.sync()
   commander
-  .install conf_obj.feb
+  .install conf_obj.npb
 
 target.reinstall = ->
   target.clean()

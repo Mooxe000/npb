@@ -8,7 +8,7 @@ jf = require 'jsonfile'
 cson_parse = (require './simple_cson').parse
 
 conf_file_path_map =
-  feb: "#{PWD}/feb.cson"
+  npb: "#{PWD}/npb.cson"
   npm: "#{PWD}/package.json"
   bower: "#{PWD}/bower.json"
 

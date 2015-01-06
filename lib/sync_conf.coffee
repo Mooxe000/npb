@@ -14,13 +14,13 @@ getSyncConf = (conf_obj) ->
 
   result =
     config: do ->
-      return {} if _.isEmpty conf_obj.feb.config
-      config = _.cloneDeep conf_obj.feb.config
-      delete conf_obj.feb.config
+      return {} if _.isEmpty conf_obj.npb.config
+      config = _.cloneDeep conf_obj.npb.config
+      delete conf_obj.npb.config
       config
     public: do ->
-      return {} if _.isEmpty conf_obj.feb
-      _.omit conf_obj.feb, (value, key) ->
+      return {} if _.isEmpty conf_obj.npb
+      _.omit conf_obj.npb, (value, key) ->
         key is 'bower' or
           key is 'npm'
 
@@ -42,9 +42,9 @@ getSyncConf = (conf_obj) ->
           _.omit conf_obj[module], funExceptDep
         # load custom conf
         custom: do ->
-          return {} if _.isEmpty conf_obj.feb
-          return {} if _.isEmpty conf_obj.feb[module]
-          _.omit conf_obj.feb[module], funExceptDep
+          return {} if _.isEmpty conf_obj.npb
+          return {} if _.isEmpty conf_obj.npb[module]
+          _.omit conf_obj.npb[module], funExceptDep
 
     unless _.isEmpty result[module]
       # merge public

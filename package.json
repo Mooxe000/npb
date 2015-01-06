@@ -1,10 +1,10 @@
 {
-  "name": "npb",
+  "name": "npba",
   "version": "0.0.0-pre",
   "description": "Anauxiliarytooltohelpdeveloperbuildnodeprojectmoreconvenient.",
   "main": "index.js",
   "bin": {
-    "feb": "feb.js"
+    "nbp": "nbp.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

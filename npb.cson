@@ -1,5 +1,5 @@
 
-name: 'npb'
+name: 'npba'
 version: '0.0.0-pre'
 description: 'An auxiliary tool to help developer build node project more convenient.'
 author: ':FooTearth <footearth@gmail.com>'
@@ -11,7 +11,7 @@ bower:
 npm:
   main: 'index.js'
   bin:
-    feb: 'feb.js'
+    npb: 'npb.js'
   license: 'MIT'
   repository:
     type: 'git'
@@ -25,8 +25,7 @@ npm:
     'shelljs'
     'jsonfile'
   ]
-  devDependencies: [
-  ]
+  devDependencies: []
 
 config:
   feb:

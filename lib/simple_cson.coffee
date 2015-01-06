@@ -4,7 +4,7 @@ coffee = require 'coffee-script'
 
 parse = (cson_file_path) ->
   cson_file = (
-    fs.readFileSync './feb.cson'
+    fs.readFileSync './npb.cson'
   ).toString()
 
   json_str = coffee.compile cson_file, bare: true
