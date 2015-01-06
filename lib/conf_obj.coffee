@@ -1,9 +1,14 @@
+echo = console.log
 eyes = require 'eyes'
 _ = require 'lodash'
 {PWD} = process.env
-fs = require 'fs'
+fs = require 'fs-extra'
 path = require 'path'
-{extname} = path
+{
+  basename
+  extname
+  join
+} = path
 jf = require 'jsonfile'
 cson_parse = (require './simple_cson').parse
 
@@ -11,6 +16,21 @@ conf_file_path_map =
   npb: "#{PWD}/npb.cson"
   npm: "#{PWD}/package.json"
   bower: "#{PWD}/bower.json"
+
+init_npb = ->
+  files = [
+    {
+      from: join __dirname, '../template/.gitignore'
+      to: "#{PWD}/.gitignore"
+    }
+    {
+      from: join __dirname, '../template/npb.cson'
+      to: "#{PWD}/npb.cson"
+    }
+  ]
+
+  for file in files
+    fs.copySync file.from, file.to unless fs.existsSync file.to
 
 getConfObj = ->
 
@@ -49,3 +69,4 @@ saveConfObj = (conf_obj_map) ->
 
 module.exports.get = getConfObj
 module.exports.save = saveConfObj
+module.exports.init = init_npb

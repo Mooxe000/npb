@@ -1,0 +1,25 @@
+
+name: ''
+version: '0.0.0'
+description: ''
+author: 'xxx <xxx@xxx.xxx>'
+Keywords: ''
+
+bower:
+  dependencies: []
+  devDependencies: []
+
+npm:
+  main: ''
+  bin: {}
+  license: ''
+  repository:
+    type: 'git'
+    url: 'https://github.com/xxx/xxx.git'
+  bugs:
+    url: 'https://github.com/xxx/xxx/issues'
+  homepage: 'https://github.com/xxx/xxx'
+  scripts:
+    test: ''
+  dependencies: []
+  devDependencies: []
