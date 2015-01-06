@@ -4,7 +4,7 @@
   "description": "Anauxiliarytooltohelpdeveloperbuildnodeprojectmoreconvenient.",
   "main": "index.js",
   "bin": {
-    "nbp": "nbp.js"
+    "nbp": "nbp.coffee"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

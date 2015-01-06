@@ -9,9 +9,9 @@ bower:
   devDependencies: []
 
 npm:
-  main: 'index.js'
+  main: 'index.coffee'
   bin:
-    npb: 'npb.js'
+    npb: 'npb.coffee'
   license: 'MIT'
   repository:
     type: 'git'
