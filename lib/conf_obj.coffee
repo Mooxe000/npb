@@ -20,7 +20,7 @@ conf_file_path_map =
 init_npb = ->
   files = [
     {
-      from: join __dirname, '../template/.gitignore'
+      from: join __dirname, '../template/gitignore'
       to: "#{PWD}/.gitignore"
     }
     {
