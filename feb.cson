@@ -1,7 +1,7 @@
 
-name: 'feb'
+name: 'npb'
 version: '0.0.0-pre'
-description: 'Front-end project package manager and build script init'
+description: 'An auxiliary tool to help developer build node project more convenient.'
 author: ':FooTearth <footearth@gmail.com>'
 
 bower:
