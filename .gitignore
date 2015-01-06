@@ -6,11 +6,6 @@ npm-debug.log
 .tmp
 trash
 
-/node_modules
-/bower_components
-/dist
-/build
-/libs
 /**/bower_components
 /**/node_modules
 /**/dist

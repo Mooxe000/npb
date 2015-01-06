@@ -1,0 +1,29 @@
+{
+  "name": "feb",
+  "version": "0.0.0-pre",
+  "description": "Front-endprojectpackagemanagerandbuildscriptinit",
+  "main": "index.js",
+  "bin": {
+    "feb": "feb.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mooxe000/feb.git"
+  },
+  "author": ":FooTearth<footearth@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mooxe000/feb/issues"
+  },
+  "homepage": "https://github.com/Mooxe000/feb",
+  "dependencies": {
+    "coffee-script": "^1.8.0",
+    "jsonfile": "^2.0.0",
+    "lodash": "^2.4.1",
+    "shelljs": "^0.3.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,37 @@
+
+name: 'feb'
+version: '0.0.0-pre'
+description: 'Front-end project package manager and build script init'
+author: ':FooTearth <footearth@gmail.com>'
+
+bower:
+  dependencies: []
+  devDependencies: []
+
+npm:
+  main: 'index.js'
+  bin:
+    feb: 'feb.js'
+  license: 'MIT'
+  repository:
+    type: 'git'
+    url: 'https://github.com/Mooxe000/feb.git'
+  bugs:
+    url: 'https://github.com/Mooxe000/feb/issues'
+  homepage: 'https://github.com/Mooxe000/feb'
+  dependencies: [
+    'coffee-script'
+    'lodash'
+    'shelljs'
+    'jsonfile'
+  ]
+  devDependencies: [
+  ]
+
+config:
+  feb:
+    bower:
+      root_allow: true
+    npm:
+      commander: 'npm'
+      # commander: 'cnpm'
