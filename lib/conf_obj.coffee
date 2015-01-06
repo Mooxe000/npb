@@ -18,19 +18,30 @@ conf_file_path_map =
   bower: "#{PWD}/bower.json"
 
 init_npb = ->
-  files = [
+  checkfiles = [
     {
-      from: join __dirname, '../template/gitignore'
-      to: "#{PWD}/.gitignore"
+      file: "#{PWD}/.gitignore"
+      handle: join __dirname, '../template/gitignore'
     }
     {
-      from: join __dirname, '../template/npb.cson'
-      to: "#{PWD}/npb.cson"
+      file: "#{PWD}/npb.cson"
+      handle: join __dirname, '../template/npb.cson'
+    }
+    {
+      file: "#{PWD}/README.md"
+      handle: (file) ->
+        fs.writeFileSync file, "# My Title"
     }
   ]
 
-  for file in files
-    fs.copySync file.from, file.to unless fs.existsSync file.to
+  for fileObj in checkfiles
+    continue if fs.existsSync fileObj.file
+
+    if _.isString fileObj.handle
+      fs.copySync fileObj.handle, fileObj.file
+
+    if _.isFunction fileObj.handle
+      fileObj.handle fileObj.file
 
 getConfObj = ->
 
