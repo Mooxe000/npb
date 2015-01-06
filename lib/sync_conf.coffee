@@ -3,6 +3,7 @@ eyes = require 'eyes'
 _ = require 'lodash'
 
 getSyncConf = (conf_obj) ->
+
   result =
     config: do ->
       return {} if _.isEmpty conf_obj.npb.config
@@ -15,6 +16,7 @@ getSyncConf = (conf_obj) ->
         key is 'bower' or
         key is 'npm'
 
+
   funExceptDep = (value, key) ->
     key is 'dependencies' or
       key is 'devDependencies'
@@ -24,7 +26,9 @@ getSyncConf = (conf_obj) ->
     'npm'
   ]
     result[module] =
-      if _.isEmpty conf_obj[module]
+      if (
+        module is 'bower'
+      ) and _.isEmpty conf_obj[module]
       then {}
       else
         # load conf file

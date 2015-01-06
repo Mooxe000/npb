@@ -1,6 +1,6 @@
 
 name: 'npba'
-version: '0.0.7'
+version: '0.0.8'
 description: 'An auxiliary tool to help developer build node project more convenient.'
 author: ':FooTearth <footearth@gmail.com>'
 

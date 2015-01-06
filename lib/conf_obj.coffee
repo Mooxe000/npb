@@ -57,15 +57,17 @@ saveConfObj = (conf_obj_map) ->
     'npm'
     'bower'
   ]
-    unless _.isEmpty conf_obj_map[module]
-      conf_file[module] =
-        path: conf_file_path_map[module]
-        obj: conf_obj_map[module]
-      {
-        path
-        obj
-      } = conf_file[module]
-      jf.writeFileSync path, obj
+    continue if (
+      module is 'bower'
+    ) and  _.isEmpty conf_obj_map[module]
+    conf_file[module] =
+      path: conf_file_path_map[module]
+      obj: conf_obj_map[module]
+    {
+      path
+      obj
+    } = conf_file[module]
+    jf.writeFileSync path, obj
 
 module.exports.get = getConfObj
 module.exports.save = saveConfObj
