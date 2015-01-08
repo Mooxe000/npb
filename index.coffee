@@ -14,8 +14,12 @@ commander =
 
 # read from config file
 conf_obj      = getConfObj()
+
 # adjust data to target structure
 conf_obj_map  = sync_conf.get conf_obj
+
+# npb config
+npb_conf      = conf_obj_map.config
 
 target.init   = -> commander.init()
 target.clean  = -> commander.clean()
@@ -25,8 +29,8 @@ target.sync   = -> saveConfObj conf_obj_map
 
 target.install    = ->
   target.sync()
-  commander
-  .install conf_obj.npb
+  commander.install conf_obj.npb
+  , npb_conf
 
 target.reinstall  = ->
   target.clean()

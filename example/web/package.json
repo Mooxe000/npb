@@ -1,0 +1,23 @@
+{
+  "name": "npb-web-example",
+  "version": "0.0.0-pre",
+  "description": "example web project of npb",
+  "author": ":FooTearth <footearth@gmail.com>",
+  "Keywords": "web front-end angular node",
+  "main": "index.coffee",
+  "license": "MIT",
+  "bin": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/id/project_name.git"
+  },
+  "bugs": {
+    "url": "https://github.com/id/project_name/issues"
+  },
+  "homepage": "https://github.com/id/project_name",
+  "scripts": {
+    "test": ""
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

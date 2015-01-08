@@ -1,6 +1,6 @@
 {
   "name": "npba",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "An auxiliary tool to help developer build node project more convenient.",
   "main": "index.coffee",
   "bin": {
@@ -25,7 +25,8 @@
     "fs-extra": "^0.14.0",
     "jsonfile": "^2.0.0",
     "lodash": "^2.4.1",
-    "shelljs": "^0.3.0"
+    "shelljs": "^0.3.0",
+    "walk-sync": "^0.1.3"
   },
   "devDependencies": {}
 }

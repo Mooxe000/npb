@@ -1,6 +1,6 @@
 
 name: 'npba'
-version: '0.0.9'
+version: '0.0.10'
 description: 'An auxiliary tool to help developer build node project more convenient.'
 author: ':FooTearth <footearth@gmail.com>'
 
@@ -24,6 +24,7 @@ npm:
   dependencies: [
     'eyes'
     'fs-extra'
+    'walk-sync'
     'coffee-script'
     'lodash'
     'shelljs'
@@ -31,10 +32,9 @@ npm:
   ]
   devDependencies: []
 
-config:
-  feb:
-    bower:
-      root_allow: true
-    npm:
-      commander: 'npm'
-      # commander: 'cnpm'
+npb:
+  bower:
+    root_allow: true
+  npm:
+#    commander: 'npm'
+    commander: 'cnpm'

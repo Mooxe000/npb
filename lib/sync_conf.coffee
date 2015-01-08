@@ -6,9 +6,9 @@ getSyncConf = (conf_obj) ->
 
   result =
     config: do ->
-      return {} if _.isEmpty conf_obj.npb.config
-      config = _.cloneDeep conf_obj.npb.config
-      delete conf_obj.npb.config
+      return {} if _.isEmpty conf_obj.npb.npb
+      config = _.cloneDeep conf_obj.npb.npb
+      delete conf_obj.npb.npb
       config
     public: do ->
       return {} if _.isEmpty conf_obj.npb
@@ -16,10 +16,10 @@ getSyncConf = (conf_obj) ->
         key is 'bower' or
         key is 'npm'
 
-
   funExceptDep = (value, key) ->
     key is 'dependencies' or
-      key is 'devDependencies'
+    key is 'devDependencies' or
+    key is 'npb'
 
   for module in [
     'bower'

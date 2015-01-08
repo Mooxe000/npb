@@ -1,0 +1,51 @@
+# PUBLIC CONFIG
+name: 'npb-web-example'
+version: '0.0.0-pre'
+description: 'example web project of npb'
+author: ':FooTearth <footearth@gmail.com>'
+Keywords: 'web front-end angular node'
+main: 'index.coffee'
+license: 'MIT'
+
+# BOWER CONFIG
+bower:
+  dependencies:
+    'bootstrap': [
+      'dist/css/bootstrap.css'
+      'dist/fonts/glyphicons-halflings-regular.eot'
+      'dist/fonts/glyphicons-halflings-regular.svg'
+      'dist/fonts/glyphicons-halflings-regular.ttf'
+      'dist/fonts/glyphicons-halflings-regular.woff'
+    ]
+  devDependencies: []
+
+# NPM CONFIG
+npm:
+  bin: {}
+  repository:
+    type: 'git'
+    url: 'https://github.com/id/project_name.git'
+  bugs:
+    url: 'https://github.com/id/project_name/issues'
+  homepage: 'https://github.com/id/project_name'
+  scripts:
+    test: ''
+  dependencies: []
+  devDependencies: []
+
+# NPB CONFIG
+npb:
+
+# -- build tools --
+#  build: 'gulp'  # default
+#  build: 'grunt'
+
+  bower:
+    base: 'bower_components'
+    dest:
+      js: 'build/scripts/libs'
+      css: 'build/styles/libs'
+      fonts: 'build/styles/fonts'
+#    root_allow: true
+#  npm:
+#   commander: 'cnpm'

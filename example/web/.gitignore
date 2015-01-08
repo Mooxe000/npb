@@ -10,6 +10,3 @@ trash
 /**/node_modules
 /**/dist
 /**/build
-
-example/init/*
-!example/init/index.coffee
