@@ -4,7 +4,7 @@ coffee = require 'coffee-script'
 
 parse = (cson_file_path) ->
   cson_file = (
-    fs.readFileSync './npb.cson'
+    fs.readFileSync cson_file_path
   ).toString()
 
   json_str = coffee.compile cson_file, bare: true
@@ -12,7 +12,9 @@ parse = (cson_file_path) ->
   for index, line of rows
     rows[index] = line
     .replace /\w+:/g, (match, offset, contents) ->
-      return match if match is 'http:' or match is 'https:'
+      return match if match is 'http:' or
+        match is 'https:' or
+        match is 'git:'
       "\"#{match.replace /:/g, ''}\":"
     .replace /\'/g, '\"'
   json_str = rows.join ''
