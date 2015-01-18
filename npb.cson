@@ -29,6 +29,7 @@ npm:
     'lodash'
     'shelljs'
     'jsonfile'
+    'thenjs'
   ]
   devDependencies: []
 

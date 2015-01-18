@@ -50,18 +50,6 @@ module.exports = (conf_obj, npb_conf) ->
       exec "#{npb_conf.commander or 'npm'} install --save-dev #{pkg}"
 
   # BOWER
-  getLibs = (deps) ->
-    libs = {}
-    for depObj in deps
-      continue unless _.isObject depObj
-      _.merge libs, depObj
-    libs
-
-  libs = getLibs [
-    dependence.bower.dependencies
-    dependence.bower.devDependencies
-  ]
-
   deps = dependence.bower.dependencies
   if checkDeps deps
     for pkg in getDeps deps
@@ -77,6 +65,17 @@ module.exports = (conf_obj, npb_conf) ->
         exec "bower install --allow-root --save-dev #{pkg}"
       else
         exec "bower install --save-dev #{pkg}"
+
+  # CLEAN
+  exec 'bower prune'
+  exec 'npm prune'
+
+  getLibs = (deps) ->
+    libs = {}
+    for depObj in deps
+      continue unless _.isObject depObj
+      _.merge libs, depObj
+    libs
 
   except = (array, except_arr) ->
     result = array
@@ -95,6 +94,12 @@ module.exports = (conf_obj, npb_conf) ->
     return unless npb_conf.bower?.base?
     base = join PWD, npb_conf.bower.base
 
+    libs = getLibs [
+      dependence.bower.dependencies
+      dependence.bower.devDependencies
+    ]
+
+    # clean except
     without = except (
       fs.readdirSync base
     ), (
@@ -102,35 +107,46 @@ module.exports = (conf_obj, npb_conf) ->
     )
     for clean_dir in without
       fs.removeSync join base, clean_dir
+    # ------------
 
     tmp_path = join PWD, '.tmp'
     fs.mkdirpSync tmp_path
+
     for lib_name in _.keys libs
+      continue if libs[lib_name] is ''
       lib_path = join base, lib_name
+      # move to tmp dir
       removeAll tmp_path
-      for file in libs[lib_name]
-        file = join (
-          join base, lib_name
-        ), file
+      if _.isArray libs[lib_name]
+        for file in libs[lib_name]
+          file = join (
+            join base, lib_name
+          ), file
+          fs.copySync file, (
+            join tmp_path, basename file
+          )
+      if _.isString libs[lib_name]
+        file = libs[lib_name]
         fs.copySync file, (
-          join tmp_path, (
-            basename file
-          )
+          join tmp_path, basename file
         )
+      # move back to bower dir
       removeAll lib_path
-      for file in libs[lib_name]
+      if _.isArray libs[lib_name]
+        for file in libs[lib_name]
+          fs.copySync (
+            join tmp_path, basename file
+          ), (
+            join lib_path, basename file
+          )
+      if _.isString libs[lib_name]
+        file = libs[lib_name]
         fs.copySync (
-          join tmp_path, (
-            basename file
-          )
+          join tmp_path, basename file
         ), (
-          join lib_path, (
-            basename file
-          )
+          join lib_path, basename file
         )
     fs.removeSync tmp_path
 
   handleBowerBack()
 
-  # CLEAN
-  exec 'npm prune'

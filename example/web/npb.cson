@@ -6,46 +6,85 @@ author: ':FooTearth <footearth@gmail.com>'
 Keywords: 'web front-end angular node'
 main: 'index.coffee'
 license: 'MIT'
+homepage: 'https://github.com/id/project_name'
+repository:
+  type: 'git'
+  url: 'https://github.com/id/project_name.git'
+bugs:
+  url: 'https://github.com/id/project_name/issues'
 
 # BOWER CONFIG
 bower:
   dependencies:
-    'bootstrap': [
+    bootstrap: [
       'dist/css/bootstrap.css'
       'dist/fonts/glyphicons-halflings-regular.eot'
       'dist/fonts/glyphicons-halflings-regular.svg'
       'dist/fonts/glyphicons-halflings-regular.ttf'
       'dist/fonts/glyphicons-halflings-regular.woff'
     ]
+    angular: ''
+    'angular-route': ''
   devDependencies: []
 
 # NPM CONFIG
 npm:
-  bin: {}
-  repository:
-    type: 'git'
-    url: 'https://github.com/id/project_name.git'
-  bugs:
-    url: 'https://github.com/id/project_name/issues'
-  homepage: 'https://github.com/id/project_name'
+#  bin: {}
+
   scripts:
     test: ''
   dependencies: []
-  devDependencies: []
+  devDependencies: [
+    'coffee-script'
+    'del'
+    'jsonfile'
+    'lodash'
+    'yargs'
+    # gulp
+    gulp: [
+      'run-sequence'
+      'browser-sync'
+      'gulp-coffee'
+      'gulp-concat'
+      'gulp-filter'
+      'gulp-inline-angular-templates'
+      'gulp-jade'
+      'gulp-less'
+      'gulp-minify-css'
+      'gulp-minify-html'
+      'gulp-rename'
+      'gulp-replace'
+      'gulp-rev'
+      'gulp-tap'
+      'gulp-uglify'
+      'gulp-usemin'
+    ]
+    # grunt
+    grunt = [
+      'grunt-shell'
+      'grunt-contrib-clean'
+      'grunt-contrib-copy'
+      'grunt-contrib-coffee'
+      'grunt-contrib-jade'
+      'grunt-contrib-less'
+      'grunt-prettify'
+      'grunt-contrib-watch'
+      'grunt-newer'
+      'grunt-browser-sync'
+      # grunt for prd
+      'grunt-inline-angular-templates'
+      'grunt-usemin'
+      'grunt-contrib-concat'
+      'grunt-contrib-uglify'
+      'grunt-contrib-cssmin'
+      'grunt-filerev'
+    ]
+  ]
 
 # NPB CONFIG
-npb:
-
-# -- build tools --
-#  build: 'gulp'  # default
-#  build: 'grunt'
-
-  bower:
-    base: 'bower_components'
-    dest:
-      js: 'build/scripts/libs'
-      css: 'build/styles/libs'
-      fonts: 'build/styles/fonts'
+#npb:
+#  bower:
+#    base: 'bower_components'
 #    root_allow: true
 #  npm:
 #   commander: 'cnpm'
