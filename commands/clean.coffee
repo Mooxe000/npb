@@ -24,8 +24,8 @@ module.exports = ->
         cont null, true
       else
         del [del_path], (err, paths) ->
-          echo JSON.stringify paths, null, 2
           unless err
+            echo JSON.stringify paths, null, 2
             cont null, true
           else
             cont err

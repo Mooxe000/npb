@@ -4,7 +4,7 @@ _ = require 'lodash'
 Thenjs = require 'thenjs'
 {exit} = process
 {status} = require './libs/config'
-check = require './libs/check'
+check = require './checkHelper'
 
 module.exports = ->
 
@@ -31,6 +31,20 @@ module.exports = ->
       check.error_handler step, result_arr
       .then (contB, check) ->
         contA null, true
+
+    .then -> cont null, true
+
+  # check step 2: Uninstalled
+  .then (cont, state) ->
+    check.install()
+    .then (contA, result_arr) ->
+      step = 'Uninstalled'
+
+      check.error_handler step, result_arr
+      .then (contB, check) ->
+        contA null, true
+
+    .then -> cont null, true
 
   # FAIL ERROR
   .fail (cont, err) ->

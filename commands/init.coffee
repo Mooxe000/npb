@@ -7,7 +7,7 @@ fse = require 'fs-extra'
 {exit} = process
 {PWD} = process.env
 {status} = require './libs/config'
-check = require './libs/check'
+check = require './checkHelper'
 
 module.exports = ->
 

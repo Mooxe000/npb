@@ -1,12 +1,12 @@
 echo = console.log
 {error} = console
 _ = require 'lodash'
-util = require './util'
+util = require './libs/util'
 Thenjs = require 'thenjs'
 fs = require 'fs'
 {PWD} = process.env
 {join} = require 'path'
-{status} = require './config'
+{status} = require './libs/config'
 
 check_files = (step, check_conf) ->
   check_list = util.obj2arr check_conf if _.isObject check_conf
@@ -33,7 +33,7 @@ error_handler = (step, result_arr) ->
         when 'Uninitialized'
           echo 'You can exec command `psb init` to init the project.'
         when 'Unsynchronized'
-          echo 'You can exec command `psb sync` or `psb syncwp` to sync the config.'
+          echo 'You can exec command `psb sync` to sync the config.'
         when 'Uninstalled'
           echo 'You can exec command `psb install` to install all the packages.'
         else

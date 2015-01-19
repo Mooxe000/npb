@@ -87,9 +87,11 @@ get_npm_deps = (config) ->
       if object.gulp?
         gulp_list = array_filter_string_object object.gulp
         , (arrayA, objectA) -> arrayA
+        gulp_list.push 'gulp'
       if object.grunt?
         grunt_list = array_filter_string_object object.grunt
         , (arrayB, objectB) -> arrayB
+        gulp_list.push 'grunt'
       _.union array, gulp_list, grunt_list
 
 get_grunt_tasks = (config) ->
@@ -120,7 +122,7 @@ get_conf_tmp = (config) ->
     key is 'devDependencies'
 
 get_deps_tmp = (npm_or_bower) ->
-  ependencies:
+  dependencies:
     if npm_or_bower.dependencies
     then deps_arr_to_obj npm_or_bower.dependencies
     else {}
@@ -151,7 +153,9 @@ group_config = (config) ->
     result
 
   npm: npm_config
+  npm_deps: npm_deps
   bower: bower_config
+  bower_deps: bower_deps
   npb: npb_config
   grunt: grunt_tasks
 
