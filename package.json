@@ -29,6 +29,7 @@
     "walk-sync": "^0.1.3"
   },
   "devDependencies": {
+    "del": "^1.1.1",
     "thenjs": "^1.4.6"
   }
 }

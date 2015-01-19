@@ -1,10 +1,7 @@
 {
-  status
   read_config_file
   group_config
 } = require './libs/config'
-{join} = require 'path'
-
 
 module.exports = ->
   # TODO check step

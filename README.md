@@ -42,7 +42,6 @@ Npb is an auxiliary command tool to help developer build node project more conve
 
     ```
     npb sync
-    npb sync_with_pkgs
     ```
 
 #### Uninstalled:

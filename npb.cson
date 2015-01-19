@@ -22,7 +22,8 @@ npm:
   scripts:
     test: ''
   dependencies: [
-    'eyes'
+#    'eyes'
+    'del'
     'fs-extra'
     'walk-sync'
     'coffee-script'
