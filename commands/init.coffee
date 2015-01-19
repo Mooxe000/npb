@@ -31,7 +31,7 @@ module.exports = ->
       fse.copy template, dest
       , (err) ->
         unless err
-          echo 'init' + name + ' done.'
+          echo "init #{name} done."
         else
           error err
 

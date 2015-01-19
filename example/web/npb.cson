@@ -60,7 +60,7 @@ npm:
       'gulp-usemin'
     ]
     # grunt
-    grunt = [
+    grunt: [
       'grunt-shell'
       'grunt-contrib-clean'
       'grunt-contrib-copy'
@@ -82,9 +82,10 @@ npm:
   ]
 
 # NPB CONFIG
-#npb:
+npb:
 #  bower:
 #    base: 'bower_components'
 #    root_allow: true
-#  npm:
+  npm:
 #   commander: 'cnpm'
+   commander: 'npm'

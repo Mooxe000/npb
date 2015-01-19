@@ -28,7 +28,7 @@ Npb is an auxiliary command tool to help developer build node project more conve
 
 ### Step
 
-1. Uninitialized:
+#### Uninitialized:
 
     npb.cson not exist
 
@@ -36,7 +36,7 @@ Npb is an auxiliary command tool to help developer build node project more conve
     npb init
     ```
 
-1. Unsynchronized:
+#### Unsynchronized:
 
     bower.json or package.json not exist
 
@@ -45,7 +45,7 @@ Npb is an auxiliary command tool to help developer build node project more conve
     npb sync_with_pkgs
     ```
 
-1. Uninstalled:
+#### Uninstalled:
 
     bower_components or node_modules not exist
 
