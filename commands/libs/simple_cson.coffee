@@ -1,6 +1,9 @@
+echo = console.log
+{error} = console
 eyes = require 'eyes'
 fs = require 'fs'
 coffee = require 'coffee-script'
+{exit} = process
 
 parse = (cson_file_path) ->
   cson_file = (
@@ -19,7 +22,12 @@ parse = (cson_file_path) ->
     .replace /\'/g, '\"'
   json_str = rows.join ''
   json_str = "{#{json_str}}"
-  json_obj = JSON.parse json_str
+  try
+    json_obj = JSON.parse json_str
+  catch e
+    error "Error parse npb config cson, please check you 'npb.cson'."
+    echo json_str
+    exit 1
   json_obj
 
 exports.parse = parse

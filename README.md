@@ -10,4 +10,70 @@ Npb is an auxiliary command tool to help developer build node project more conve
 
     >> (sudo) npm update -g npba
 
-## Command Options
+## Command
+
+### Helper
+
+* Check Step
+
+    ```
+    npb check
+    ```
+
+* Show config
+
+    ```
+    npb show
+    ```
+
+### Step
+
+#### Uninitialized:
+
+    npb.cson not exist
+
+    ```
+    npb init
+    ```
+
+#### Unsynchronized:
+
+    bower.json or package.json not exist
+
+    ```
+    npb sync
+    ```
+
+#### Uninstalled:
+
+    bower_components or node_modules not exist
+
+    * Clean
+
+    ```
+    npb clean
+    npb clean --bower
+    npb clean --node
+    ```
+
+    * Install
+
+    ```
+    npb install
+    npb install --bower
+    npb install --node
+    ```
+
+    * reInstall
+
+    ```
+    npb reinstall
+    npb reinstall --bower
+    npb reinstall --node
+    ```
+
+# License
+
+Licensed under MIT
+
+Copyright (c) 2015 CN FooTearth
