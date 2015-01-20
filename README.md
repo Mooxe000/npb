@@ -71,3 +71,9 @@ Npb is an auxiliary command tool to help developer build node project more conve
     npb reinstall --bower
     npb reinstall --node
     ```
+
+# License
+
+Licensed under MIT
+
+Copyright (c) 2015 CN FooTearth
