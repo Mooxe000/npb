@@ -1,26 +1,38 @@
 
 name: 'npba'
-version: '0.1.0'
+version: '0.1.1'
 description: 'An auxiliary tool to help developer build node project more convenient.'
 author: ':FooTearth <footearth@gmail.com>'
+main: 'index.coffee'
+bin:
+  npb: 'bin/npb.coffee'
+license: 'MIT'
+repository:
+  type: 'git'
+  url: 'https://github.com/Mooxe000/npb.git'
+bugs:
+  url: 'https://github.com/Mooxe000/npb/issues'
+homepage: 'https://github.com/Mooxe000/npb'
+keywords: [
+  'command'
+  'auxiliary'
+  'tool'
+  'bower'
+  'npm'
+  'grunt'
+  'gulp'
+  'build'
+  'coffee'
+]
 
 bower:
   dependencies: []
   devDependencies: []
 
 npm:
-  main: 'index.coffee'
-  bin:
-    npb: 'bin/npb.coffee'
-  license: 'MIT'
-  repository:
-    type: 'git'
-    url: 'https://github.com/Mooxe000/feb.git'
-  bugs:
-    url: 'https://github.com/Mooxe000/feb/issues'
-  homepage: 'https://github.com/Mooxe000/feb'
   scripts:
     test: ''
+    reinstall: 'reinstall.sh'
   dependencies: [
     'shelljs'
     'lodash'
