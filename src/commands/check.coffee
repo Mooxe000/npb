@@ -3,7 +3,7 @@ echo = console.log
 _ = require 'lodash'
 Thenjs = require 'thenjs'
 {exit} = process
-{status} = require './libs/config'
+{status} = require '../libs/config'
 check = require './checkHelper'
 
 module.exports = ->

@@ -3,13 +3,13 @@ require 'shelljs/global'
 require 'shelljs/make'
 echo = console.log
 
-check = require '../commands/check'
-init = require '../commands/init'
-show = require '../commands/show'
-sync = require '../commands/sync'
-clean = require '../commands/clean'
-install = require '../commands/install'
-reinstall = require '../commands/reinstall'
+check = require '../src/commands/check'
+init = require '../src/commands/init'
+show = require '../src/commands/show'
+sync = require '../src/commands/sync'
+clean = require '../src/commands/clean'
+install = require '../src/commands/install'
+reinstall = require '../src/commands/reinstall'
 
 target.check = -> do check
 target.init = -> do init

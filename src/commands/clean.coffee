@@ -6,7 +6,7 @@ echo = console.log
 fs = require 'fs'
 Thenjs = require 'thenjs'
 del = require 'del'
-{status} = require './libs/config'
+{status} = require '../libs/config'
 
 module.exports = ->
   step = 'Uninstalled'

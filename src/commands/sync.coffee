@@ -6,7 +6,7 @@ Thenjs = require 'thenjs'
   status
   read_config_file
   group_config
-} = require './libs/config'
+} = require '../libs/config'
 {join} = require 'path'
 {PWD} = process.env
 {exit} = process

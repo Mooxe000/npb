@@ -10,7 +10,7 @@ _ = require 'lodash'
 Thenjs = require 'thenjs'
 {
   status
-} = require './libs/config'
+} = require '../libs/config'
 
 step = 'Uninstalled'
 
