@@ -1,6 +1,5 @@
 echo = console.log
 {error} = console
-eyes = require 'eyes'
 fs = require 'fs'
 coffee = require 'coffee-script'
 {exit} = process

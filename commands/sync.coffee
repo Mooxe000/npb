@@ -1,5 +1,6 @@
 echo = console.log
 {error} = console
+_ = require 'lodash'
 Thenjs = require 'thenjs'
 {
   status
@@ -20,12 +21,20 @@ module.exports = ->
   npm_conf_file_path = join PWD, status[step].npm
   bower_conf_file_path = join PWD, status[step].bower
 
-  Thenjs.parallel [
+  handle_arr = [
     (cont) ->
       jf.writeFile npm_conf_file_path, config.npm, cont
-    (cont) ->
-      jf.writeFile bower_conf_file_path, config.bower, cont
   ]
+
+  unless (
+    _.isEmpty config.bower.dependencies
+  ) and (
+    _.isEmpty config.bower.devDependencies
+  )
+    handle_arr.push (cont) ->
+      jf.writeFile bower_conf_file_path, config.bower, cont
+
+  Thenjs.parallel handle_arr
   .then (cont, result_arr) ->
     cont null, true
   .fail (cont, err) ->
