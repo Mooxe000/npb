@@ -101,8 +101,47 @@ count_install_pkgs = (wait_install_pkgs) ->
       count += wait_install_pkgs[npm_or_bower][dep_or_devdep].length
   count
 
+cleanDir = (dir) ->
+  return unless fs.statSync(dir).isDirectory()
+  for file in fs.readdirSync dir
+    fse.removeSync (
+      join dir, file
+    )
+
+moveFiles = (filenames, src_dir, dest_dir) ->
+  cleanDir dest_dir
+  for filename in filenames
+    src_file = join src_dir, filename
+    dest_file = join dest_dir, filename
+    fse.copySync src_file, dest_file
+
+handle_back_bower = (keep_list) ->
+  {
+    dest
+    keep_list
+  } = keep_list
+
+  # ensure tmp dir
+  tmp_path = join PWD, '.tmp'
+  fse.ensureDirSync tmp_path
+
+  for pkgname, pkgfiles of keep_list
+    # except keep all the files
+    continue if pkgfiles is ''
+    # single file to array
+    pkgfiles = [pkgfiles] if _.isString pkgfiles
+    pkg_parent_path = join dest, pkgname
+    # move to tmp dir
+    # TODO filter css/font/js and others
+    moveFiles pkgfiles, pkg_parent_path, tmp_path
+    # move back
+    moveFiles pkgfiles, tmp_path, pkg_parent_path
+
+  fse.removeSync tmp_path
+
 exports.get_config = get_config
 exports.get_wait_list = (config) ->
   installed_pkgs = get_installed_pkgnames config
   get_wait_list config, installed_pkgs
 exports.count_install_pkgs = count_install_pkgs
+exports.handle_back_bower = handle_back_bower

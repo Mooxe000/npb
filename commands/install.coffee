@@ -13,6 +13,7 @@ del = require 'del'
   get_config
   get_wait_list
   count_install_pkgs
+  handle_back_bower
 } = require './installHelper'
 
 module.exports = ->
@@ -74,3 +75,9 @@ module.exports = ->
         exit 1
 
   # bower handle back
+  return unless config.bower
+  return unless config.bower.keep_list
+  unless _.isEmpty config.bower.keep_list
+    handle_back_bower
+      dest: config.bower.dest
+      keep_list: config.bower.keep_list
