@@ -1,7 +1,7 @@
 {
   read_config_file
   group_config
-} = require './libs/config'
+} = require '../libs/config'
 
 module.exports = ->
   # TODO check step

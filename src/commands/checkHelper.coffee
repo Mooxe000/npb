@@ -1,12 +1,12 @@
 echo = console.log
 {error} = console
 _ = require 'lodash'
-util = require './libs/util'
+util = require '../libs/util'
 Thenjs = require 'thenjs'
 fs = require 'fs'
 {PWD} = process.env
 {join} = require 'path'
-{status} = require './libs/config'
+{status} = require '../libs/config'
 
 check_files = (step, check_conf) ->
   check_list = util.obj2arr check_conf if _.isObject check_conf
