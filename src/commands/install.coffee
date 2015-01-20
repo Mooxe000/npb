@@ -8,7 +8,7 @@ del = require 'del'
 {
   read_config_file
   group_config
-} = require './libs/config'
+} = require '../libs/config'
 {
   get_config
   get_wait_list

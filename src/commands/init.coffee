@@ -6,7 +6,7 @@ fse = require 'fs-extra'
 {join} = require 'path'
 {exit} = process
 {PWD} = process.env
-{status} = require './libs/config'
+{status} = require '../libs/config'
 check = require './checkHelper'
 
 module.exports = ->
@@ -21,7 +21,7 @@ module.exports = ->
       _.filter result_arr, exist: false
     ), 'name'
 
-    template_parent_path = join __dirname, '../template'
+    template_parent_path = join __dirname, '../../template'
 
     Thenjs.each wait_list
     , (contA, name) ->
