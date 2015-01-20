@@ -25,12 +25,16 @@ module.exports = ->
     , (contA, name) ->
       file_name = check_conf[name]
       if file_name is '.gitignore'
-        unless fse.existsSync file_name
-          file_name = '.npmignore'
-      template = join (
-        join __dirname, '../template'
-      ), file_name
-      dest = join PWD, file_name
+        template = join (
+          join __dirname, '../template'
+        ), '.npmignore'
+        dest = join PWD, file_name
+      else
+        template = join (
+          join __dirname, '../template'
+        ), file_name
+        dest = join PWD, file_name
+      # Copy
       fse.copy template, dest
       , (err) ->
         unless err
