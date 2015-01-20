@@ -16,55 +16,48 @@ Npb is an auxiliary command tool to help developer build node project more conve
 
 * Check Step
 
-    ```
+
     npb check
-    ```
 
 * Show config
 
-    ```
+
     npb show
-    ```
 
 ### Step
 
 #### Uninitialized:
 
-    npb.cson not exist
+npb.cson not exist
 
-    ```
+
     npb init
-    ```
 
 #### Unsynchronized:
 
-    bower.json or package.json not exist
+bower.json or package.json not exist
 
-    ```
+
     npb sync
-    ```
 
 #### Uninstalled:
 
-    bower_components or node_modules not exist
+bower_components or node_modules not exist
 
-    * Clean
+* Clean
 
-    ```
+
     npb clean
-    ```
 
-    * Install
+* Install
 
-    ```
+
     npb install
-    ```
 
-    * reInstall
+* reInstall
 
-    ```
+
     npb reinstall
-    ```
 
 # License
 
