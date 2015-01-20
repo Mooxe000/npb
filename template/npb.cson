@@ -1,11 +1,19 @@
 # PUBLIC CONFIG
-name: 'project name'
+name: 'project_name'
 version: '0.0.0'
-description: 'project description'
-author: 'author name <email@gmail.com>'
-Keywords: 'your keywords'
-main: 'index.coffee'
+description: 'project_description'
+author: 'author_name <email@gmail.com>'
+main: 'mainfile'
 license: 'MIT'
+repository:
+  type: 'git'
+  url: 'https://github.com/repo_id/project_name.git'
+bugs:
+  url: 'https://github.com/repo_id/project_name/issues'
+homepage: 'https://github.com/repo_id/project_name'
+Keywords: [
+  'your keywords'
+]
 
 # BOWER CONFIG
 bower:
@@ -15,12 +23,6 @@ bower:
 # NPM CONFIG
 npm:
   bin: {}
-  repository:
-    type: 'git'
-    url: 'https://github.com/id/project_name.git'
-  bugs:
-    url: 'https://github.com/id/project_name/issues'
-  homepage: 'https://github.com/id/project_name'
   scripts:
     test: ''
   dependencies: []
@@ -29,12 +31,12 @@ npm:
 # NPB CONFIG
 npb:
 
-# -- build tools --
-#  build: 'gulp'  # default
-#  build: 'grunt'
-
 #  bower:
 #    root_allow: true
   npm:
     commander: 'npm' # default
     # commander: 'cnpm'
+
+# -- build tools --
+#  build: 'gulp'  # default
+#  build: 'grunt'
