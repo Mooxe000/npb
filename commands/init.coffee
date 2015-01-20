@@ -21,19 +21,17 @@ module.exports = ->
       _.filter result_arr, exist: false
     ), 'name'
 
+    template_parent_path = join __dirname, '../template'
+
     Thenjs.each wait_list
     , (contA, name) ->
       file_name = check_conf[name]
+      template = join template_parent_path
+      , file_name
       if file_name is '.gitignore'
-        template = join (
-          join __dirname, '../template'
-        ), '.npmignore'
-        dest = join PWD, file_name
-      else
-        template = join (
-          join __dirname, '../template'
-        ), file_name
-        dest = join PWD, file_name
+        template = join template_parent_path
+        , '.npmignore' unless fse.existsSync template
+      dest = join PWD, file_name
       # Copy
       fse.copy template, dest
       , (err) ->
