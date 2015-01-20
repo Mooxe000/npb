@@ -24,6 +24,9 @@ module.exports = ->
     Thenjs.each wait_list
     , (contA, name) ->
       file_name = check_conf[name]
+      if file_name is '.gitignore'
+        unless fse.existsSync file_name
+          file_name = '.npmignore'
       template = join (
         join __dirname, '../template'
       ), file_name
