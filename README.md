@@ -4,11 +4,11 @@ Npb is an auxiliary command tool to help developer build node project more conve
 
 ## Install
 
-    >> (sudo) npm install -g npba
+    >> (sudo) npm install -g npb-coffee
 
 ### Update
 
-    >> (sudo) npm update -g npba
+    >> (sudo) npm update -g npb-coffee
 
 ## Command
 
@@ -52,24 +52,18 @@ Npb is an auxiliary command tool to help developer build node project more conve
 
     ```
     npb clean
-    npb clean --bower
-    npb clean --node
     ```
 
     * Install
 
     ```
     npb install
-    npb install --bower
-    npb install --node
     ```
 
     * reInstall
 
     ```
     npb reinstall
-    npb reinstall --bower
-    npb reinstall --node
     ```
 
 # License

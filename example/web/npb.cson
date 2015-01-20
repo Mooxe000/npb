@@ -36,6 +36,7 @@ npm:
   dependencies: []
   devDependencies: [
     'coffee-script'
+    'npb-coffee'
     'del'
     'jsonfile'
     'lodash'

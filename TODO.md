@@ -1,6 +1,6 @@
 # TODO
 
-1. 增加 grunt gulp 模块化 支持
+1. 在 init 生命中初始化 Gruntfile && gulpfile && 相应文件夹
 
 1. 分离 流程中 bower npm 数据结构
 
