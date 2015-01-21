@@ -59,6 +59,13 @@ bower_components or node_modules not exist
 
     npb reinstall
 
+### init build tools
+
+    >> Grunt
+    npb grunt
+    >> gulp
+    npb gulp
+
 # License
 
 Licensed under MIT

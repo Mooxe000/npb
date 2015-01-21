@@ -11,8 +11,8 @@ module.exports = (grunt) ->
   # check $cwd/package.json
 
   # Load task functions
-  taskConfigurations = loadTasks './gulp/tasks'
-  registerDefinitions = loadTasks './gulp/register'
+  taskConfigurations = loadTasks './grunt/tasks'
+  registerDefinitions = loadTasks './grunt/register'
 
   # (ensure that a default task exists)
   unless registerDefinitions.default

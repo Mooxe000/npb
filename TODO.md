@@ -1,7 +1,5 @@
 # TODO
 
-1. 在 init 生命中初始化 Gruntfile && gulpfile && 相应文件夹
-
 1. 分离 流程中 bower npm 数据结构
 
     第一时间判断 是否存在 bower 配置，如果不是，则后续流程完全不考虑 bower 部分
