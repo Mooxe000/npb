@@ -61,9 +61,14 @@ bower_components or node_modules not exist
 
 ### init build tools
 
+    npm install npb-coffee
+    npm install coffee-script
+
     >> Grunt
+    npm install grunt
     npb grunt
     >> gulp
+    npm install gulp
     npb gulp
 
 # License
